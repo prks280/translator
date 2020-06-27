@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<br><br><br><br><br>
+
+<!--<button id="myButton" class="float-left submit-button" >Home</button>-->
+
+<!--<script type="text/javascript">-->
+<!--    document.getElementById("myButton").onclick = function () {-->
+<!--        location.href = "www.yoursite.com";-->
+<!--    };-->
+<!--</script>-->
+
+<!--<button onclick="displayDate()">The time is?</button>-->
+
+<!--<script>-->
+<!--function displayDate() {-->
+<!--  document.getElementById("demo").innerHTML = Date();-->
+<!--}-->
+<!--</script>-->
+<!--<p id="demo"></p>-->
+
+<form action="word-list/">
+  <label >English Word :</label>
+  <input type="text" id="english_word" name="english_word">
+  <input type="submit" value="Do Translate">
+</form>
+
+
+<!--<ul>-->
+<!--    <br><br><br><br><br><br><br>-->
+<!--    <li>Admin : <a href="http://127.0.0.1:8000/admin/">http://127.0.0.1:8000/admin/</a></li><br>-->
+<!--    <li>english_word : <a href="http://127.0.0.1:8000/api/english_word/">http://127.0.0.1:8000/api/english_word/</a></li><br>-->
+<!--    <li>hindi_meaning : <a href="http://127.0.0.1:8000/api/hindi_meaning/">http://127.0.0.1:8000/api/hindi_meaning/</a></li><br>-->
+<!--</ul>-->
+
+{% endblock %}

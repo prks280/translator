@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Matched Words</h1>
+<ul>
+    <h2> Best Match</h2>
+    {% for word in best_match %}
+    <li>{{ word.english_word }} <a href="http://127.0.0.1:8000/all-hindi-meanings/{{ word.id }}"> translate</a></li>
+    {% endfor %}
+
+
+    <h2> Similar Match</h2>
+    {% for word in similar_match %}
+    <li>{{ word.english_word }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
