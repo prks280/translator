@@ -63,5 +63,11 @@ class EnglishWordDetail(APIView):
 
 	def get(self, request, pk):
 		english_word = get_object_or_404(EnglishWord, pk=pk)
-		serializer = EnglishWordSerializer(english_word)
-		return Response({'serializer': serializer, 'english_word': english_word})
+		# serializer = EnglishWordSerializer(english_word)
+		# {'serializer': serializer, 'english_word': english_word}
+
+		# hindi results
+		all_hindi_translations = HindiMeaning.objects.filter(english_word=english_word)
+		all_hindi_translations = HindiMeaningSerializer(all_hindi_translations, many=True).data
+
+		return Response({'all_hindi_translations': all_hindi_translations, 'english_word': english_word})

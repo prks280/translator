@@ -6,8 +6,24 @@
 {% block content %}
 
 
-<h1>Word - {{ english_word.english_word }}</h1>
+<h1 style="text-align:center">{{ english_word.english_word }}</h1>
 
+
+
+<table width="100%" border="0" style="border-spacing: 0;border-left: 2px black;border-right: 2px black;border-bottom: 2px black;">
+	<tr style="background-color: #6c757d; color: #fff;">
+		<th style="text-align: center; border: 1px black;">Hindi Translations</th>
+	</tr>
+
+    {% for hindi_translate in all_hindi_translations  %}
+            <tr style="background-color: #ffffff; font-weight: 700;">
+                <td style="text-align: center; border: 1px black;">  *  {{ hindi_translate.hindi_meaning }}</td>
+            </tr>
+            <tr style="background-color: #ffffff; font-weight: 700;">
+                <td style="text-align: center; border: 1px grey;"> -------------------------------------------</td>
+            </tr>
+    {% endfor %}
+</table>
 
 
 {% endblock %}

@@ -14,4 +14,4 @@ class HindiMeaning(models.Model):
 	grammar = models.CharField(max_length=100, null=True, blank=True)
 
 	def __str__(self):
-		return self.english_word, self.hindi_meaning
+		return self.english_word.english_word

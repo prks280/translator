@@ -2,21 +2,23 @@
 {% block content %}
 <br><br><br><br><br>
 
+<style>
+    
+        .container {
+        font-size: 20px;
+        padding-left: 50px;
+</style>
 
 
-<form action="matching_list/">
-  <label >English Word :</label>
-  <input type="text" id="english_word" name="english_word">
-  <input type="submit" value="Do Translate">
-</form>
+<div class="container">
+    <div class="row justify-content-center">
+        <form action="matching_list/">
+            <label>Type English Word Below</label><br><br>
+            <input type="text" id="english_word" name="english_word" placeholder="English word..."> <br><br>
+            <input type="submit" value="Do Translate">
+        </form>
+    </div>
+</div>
 
-
-<ul>
-    <br><br><br><br><br><br><br>
-    <li>Admin : <a href="http://127.0.0.1:8000/admin/">http://127.0.0.1:8000/admin/</a></li><br><br>
-
-    <li>english_word_list : <a href="http://127.0.0.1:8000/english_word_list/">http://127.0.0.1:8000/english_word_list/</a></li><br>
-    <li>english_word_detail : <a href="http://127.0.0.1:8000/english_word_detail/1/">href="http://127.0.0.1:8000/english_word_detail/1/</a></li><br>
-</ul>
 
 {% endblock %}

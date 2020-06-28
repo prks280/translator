@@ -13,4 +13,4 @@ class HindiMeaningSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = HindiMeaning
-		fields = ('english_word', 'hindi_meaning', 'grammer')
+		fields = ('english_word', 'hindi_meaning', 'grammar')
