@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Matching Words</h1>
+
+
+
+<table width="100%" border="0" style="border-spacing: 0;border-left: 2px black;border-right: 2px black;border-bottom: 2px black;">
+	<tr style="background-color: #6c757d; color: #fff;">
+		<th style="text-align: center; border: 1px black;">Best Match</th>
+		<th style="text-align: center; border: 1px black;">Link</th>
+	</tr>
+
+    {% for word in best_match  %}
+            <tr style="background-color: #ffffff; font-weight: 700;">
+                <td style="border: 1px black;">{{ word.english_word }}</td>
+                <td style="text-align: center; border: 1px black;"><a href="http://127.0.0.1:8000/english_word_detail/{{ word.id }}"> translate</a></td>
+            </tr>
+    {% endfor %}
+</table> <br><br>
+
+
+<table width="100%" border="0" style="border-spacing: 0;border-left: 2px black;border-right: 2px black;border-bottom: 2px black;">
+	<tr style="background-color: #6c757d; color: #fff;">
+		<th style="text-align: center; border: 1px black;">Similar Match</th>
+		<th style="text-align: center; border: 1px black;">Link</th>
+	</tr>
+
+    {% for word in similar_match  %}
+            <tr style="background-color: #ffffff; font-weight: 700;">
+                <td style="border: 1px black;">  *  {{ word.english_word }}</td>
+                <td style="border: 1px black;"><a href="http://127.0.0.1:8000/english_word_detail/{{ word.id }}"> translate</a></td>
+            </tr>
+    {% endfor %}
+</table>
+
+
+
+
+{% endblock %}
