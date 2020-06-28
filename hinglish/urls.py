@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from do_translate.views import index, MatchingWordList, AllHindiMeanings
+from do_translate.views import *
 
 urlpatterns = [
 	path('admin/', admin.site.urls),
 	path('', index),
 	path('api/', include('do_translate.urls')),
-	path('word-list/', MatchingWordList.as_view()),
-	path('all-hindi-meanings/<int:pk>/', AllHindiMeanings.as_view(), name='all-hindi-meanings'),
+	path('matching_list/', MatchingWordList.as_view()),
+
+	path('english_word_list/', EnglishWordList.as_view()),
+	path('english_word_detail/<int:pk>/', EnglishWordDetail.as_view(), name='english_word_detail'),
 ]

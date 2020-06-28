@@ -5,7 +5,7 @@
 <ul>
     <h2> Best Match</h2>
     {% for word in best_match %}
-    <li>{{ word.english_word }} <a href="http://127.0.0.1:8000/all-hindi-meanings/{{ word.id }}"> translate</a></li>
+    <li>{{ word.english_word }} <a href="http://127.0.0.1:8000/english_word_detail/{{ word.id }}"> translate</a></li>
     {% endfor %}
 
 

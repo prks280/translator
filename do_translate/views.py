@@ -1,16 +1,14 @@
-from rest_framework.viewsets import ModelViewSet
-from rest_framework import filters
-from .serializers import *
-from .filters import *
-from rest_framework.views import APIView
-from rest_framework.renderers import TemplateHTMLRenderer
-from django_filters.rest_framework import DjangoFilterBackend
-from django.shortcuts import render
-from rest_framework import mixins
-from django.shortcuts import get_object_or_404, redirect
-from rest_framework.response import Response
-from rest_framework import generics
 from django.db.models import Q
+from django.shortcuts import get_object_or_404
+from django.shortcuts import render
+from rest_framework import filters
+from rest_framework.renderers import TemplateHTMLRenderer
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework.viewsets import ModelViewSet
+
+from .filters import *
+from .serializers import *
 
 
 class EnglishWordViewSet(ModelViewSet):
@@ -34,7 +32,7 @@ def index(request):
 
 class MatchingWordList(APIView):
 	renderer_classes = [TemplateHTMLRenderer]
-	template_name = 'profile_list.html'
+	template_name = 'search_list.html'
 
 	def get(self, request, ):
 		english_word = request.query_params['english_word']
@@ -50,11 +48,20 @@ class MatchingWordList(APIView):
 		return Response(data)
 
 
-class AllHindiMeanings(APIView):
+class EnglishWordList(APIView):
 	renderer_classes = [TemplateHTMLRenderer]
-	template_name = 'all-hindi-meanings.html'
+	template_name = 'english_word_list.html'
+
+	def get(self, request):
+		queryset = EnglishWord.objects.all()[0:50]
+		return Response({'english_words': queryset})
+
+
+class EnglishWordDetail(APIView):
+	renderer_classes = [TemplateHTMLRenderer]
+	template_name = 'english_word_detail.html'
 
 	def get(self, request, pk):
-		word = get_object_or_404(EnglishWord, pk=pk)
-		serializer = EnglishWordSerializer(word)
-		return Response({'serializer': serializer, 'word': word})
+		english_word = get_object_or_404(EnglishWord, pk=pk)
+		serializer = EnglishWordSerializer(english_word)
+		return Response({'serializer': serializer, 'english_word': english_word})

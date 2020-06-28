@@ -18,3 +18,23 @@ with open('1_English-Hindi Dictionary.csv') as csv_file:
 			hindi = HindiMeaning.objects.create(english_word=english, hindi_meaning=hindi_meaning, grammar=grammar)
 		except Exception as e:
 			print('****** error :', e)
+
+
+
+
+# <!--<button id="myButton" class="float-left submit-button" >Home</button>-->
+#
+# <!--<script type="text/javascript">-->
+# <!--    document.getElementById("myButton").onclick = function () {-->
+# <!--        location.href = "www.yoursite.com";-->
+# <!--    };-->
+# <!--</script>-->
+#
+# <!--<button onclick="displayDate()">The time is?</button>-->
+#
+# <!--<script>-->
+# <!--function displayDate() {-->
+# <!--  document.getElementById("demo").innerHTML = Date();-->
+# <!--}-->
+# <!--</script>-->
+# <!--<p id="demo"></p>-->
