@@ -1,1 +1,1 @@
-web: gunicorn translator.wsgi
+web: gunicorn hinglish.wsgi
