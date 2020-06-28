@@ -24,7 +24,7 @@ SECRET_KEY = '5o0e&ifb2&kpcd55yg05%v18j%x2a%an2+7laduzxp&a=s(r9k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://english2hindi.herokuapp.com/']
 
 # Application definition
 

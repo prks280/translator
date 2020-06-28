@@ -14,7 +14,7 @@
     {% for word in best_match  %}
             <tr style="background-color: #ffffff; font-weight: 700;">
                 <td style="border: 1px black;">{{ word.english_word }}</td>
-                <td style="text-align: center; border: 1px black;"><a href="http://127.0.0.1:8000/english_word_detail/{{ word.id }}"> translate</a></td>
+                <td style="text-align: center; border: 1px black;"><a href="https://english2hindi.herokuapp.com//english_word_detail/{{ word.id }}"> translate</a></td>
             </tr>
     {% endfor %}
 </table> <br><br>
@@ -29,7 +29,7 @@
     {% for word in similar_match  %}
             <tr style="background-color: #ffffff; font-weight: 700;">
                 <td style="border: 1px black;">  *  {{ word.english_word }}</td>
-                <td style="border: 1px black;"><a href="http://127.0.0.1:8000/english_word_detail/{{ word.id }}"> translate</a></td>
+                <td style="border: 1px black;"><a href="https://english2hindi.herokuapp.com//english_word_detail/{{ word.id }}"> translate</a></td>
             </tr>
     {% endfor %}
 </table>
